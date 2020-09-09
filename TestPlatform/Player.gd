@@ -1,13 +1,5 @@
 extends KinematicBody2D
 
-#Enum will contain all different states of player movement and control
-enum{
-	groundREADY,
-	groundPULL,
-	airREADY,
-	airPULL
-}
-
 #Landing on ground with gravity
 const UP = Vector2(0,-1)
 export var GRAVITY = 20
@@ -22,31 +14,13 @@ var physics_motion = Vector2(0.0, 1.0)
 export var baseSpeed = 250
 export var jumpPower = 500
 
-#state
-var state = groundREADY
-var hook
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# creates the grappling hook as a child of the player
-	var grapplingScene = load("res://PhysicsGrapplingHook.tscn")
-	hook = grapplingScene.instance()
-	add_child(hook)
+	pass
 
 # Input Callback should move player input to this
 func _input(event: InputEvent):
-	if event is InputEventMouseButton:
-		if not hook.shot:
-			hook.shoot(event.position - self.position)
-		elif hook.collided:
-			if state == groundREADY:
-				state = groundPULL
-			elif state == airREADY:
-				state = airPULL
-			else:
-				hook.shot = false
-		else:
-			hook.returning = true
+	pass
 
 
 #Physics call with time delta
@@ -59,27 +33,10 @@ func _physics_process(delta):
 			motion.y = -jumpPower
 		else:
 			motion.y = 1
+		ground_movement(delta)
+	else:
+		air_movement(delta)
 	
-	#state machine "switch" to organize controls and animation
-	match state:
-		groundREADY:
-			ground_movement(delta)
-		groundPULL:
-			ground_movement(delta)
-			if hook.collided:
-				to_hook(delta)
-			else:
-				state = groundREADY
-		airREADY:
-			air_movement(delta)
-		airPULL:
-			air_movement(delta)
-			if hook.collided:
-				to_hook(delta)
-			else:
-				state = airREADY
-	
-
 	motion = move_and_slide(motion, UP)
 
 func air_movement(delta):
@@ -100,5 +57,5 @@ func ground_movement(delta):
 		motion.x = motion.x/1.25
 		
 	
-func to_hook(delta):
-	motion = motion/2 + (hook.hookPos - self.global_position)*delta*60*hook.hookSpeed
+func get_pulled(pull):
+	motion += pull

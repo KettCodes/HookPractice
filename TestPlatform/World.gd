@@ -11,6 +11,9 @@ func _ready():
 	var playerScene = load("res://Player.tscn")
 	var player = playerScene.instance()
 	add_child(player)
+	var hookScene = load("res://objects/Hook.tscn")
+	var hook = hookScene.instance()
+	add_child(hook)
 	
 	player.position = Vector2(290,315)
 

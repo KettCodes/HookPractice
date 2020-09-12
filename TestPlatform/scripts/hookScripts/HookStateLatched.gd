@@ -5,10 +5,8 @@ class_name HookStateLatched
 
 #Public Overrides
 func update_and_return(delta):
-	if get_parent()._charginHook: charge_hook(delta)
-	var playerPos = player.position
-	player.get_pulled(-delta*pow(hook.position.distance_to(playerPos), pullExpFactor)
-					*pullFactor*hook.position.direction_to(playerPos))
+	.update_and_return(delta)
+	_pull_player(delta)
 	return null
 	
 func jump_out(): return "idle"
@@ -20,3 +18,9 @@ func enter_state(host): return
 func exit_state(host): return
 
 #Private Functions
+
+func _pull_player(delta):
+	var playerPos = player.position
+	var hookPos = hook.position
+	player.get_pulled(-delta*pow(hookPos.distance_to(playerPos), pullExpFactor)
+					*pullFactor*hookPos.direction_to(playerPos))

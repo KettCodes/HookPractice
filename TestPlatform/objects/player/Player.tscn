@@ -1,18 +1,19 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://objects/player/playerScripts/StateMachine.gd" type="Script" id=1]
-[ext_resource path="res://objects/player/playerScripts/motion/grounded/Idle.gd" type="Script" id=2]
-[ext_resource path="res://objects/player/playerScripts/motion/grounded/Walk.gd" type="Script" id=3]
-[ext_resource path="res://objects/player/playerScripts/motion/airborne/Jump.gd" type="Script" id=4]
-[ext_resource path="res://objects/player/playerScripts/motion/airborne/Fall.gd" type="Script" id=5]
-[ext_resource path="res://objects/player/SharedVars.gd" type="Script" id=6]
-[ext_resource path="res://objects/player/playerScripts/motion/gripping/Crawl.gd" type="Script" id=7]
-[ext_resource path="res://objects/player/playerScripts/motion/gripping/Climb.gd" type="Script" id=8]
+[ext_resource path="res://objects/player/playerScripts/PlayerStateMachine.gd" type="Script" id=1]
+[ext_resource path="res://objects/player/playerScripts/motion/grounded/PlayerIdle.gd" type="Script" id=2]
+[ext_resource path="res://objects/player/playerScripts/motion/grounded/PlayerWalk.gd" type="Script" id=3]
+[ext_resource path="res://objects/player/playerScripts/motion/airborne/PlayerJump.gd" type="Script" id=4]
+[ext_resource path="res://objects/player/playerScripts/motion/airborne/PlayerFall.gd" type="Script" id=5]
+[ext_resource path="res://objects/player/PlayerSharedVars.gd" type="Script" id=6]
+[ext_resource path="res://objects/player/playerScripts/motion/gripping/PlayerCrawl.gd" type="Script" id=7]
+[ext_resource path="res://objects/player/playerScripts/motion/gripping/PlayerClimb.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

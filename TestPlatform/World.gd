@@ -8,7 +8,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var playerScene = load("res://objects/hook/Player.tscn")
+	var playerScene = load("res://objects/player/Player.tscn")
 	var player = playerScene.instance()
 	add_child(player)
 	var hookScene = load("res://objects/hook/Hook.tscn")

@@ -22,5 +22,5 @@ func exit_state(host): return
 func _pull_player(delta):
 	var playerPos = player.position
 	var hookPos = hook.position
-	player.get_pulled(-delta*pow(hookPos.distance_to(playerPos), pullExpFactor)
-					*pullFactor*hookPos.direction_to(playerPos))
+	#player.get_yanked(-delta*pow(hookPos.distance_to(playerPos), pullExpFactor)
+	#				*pullFactor*hookPos.direction_to(playerPos))

@@ -41,22 +41,22 @@ func jump_out(): return null
 #Functions used by multiple children dont need to overwrite
 
 func handle_input_poll(delta): 
-	if Input.is_action_just_pressed('ui_jump'):
+	if Input.is_action_just_pressed('jump'):
 		print("Polled Jump!")
-	if Input.is_action_pressed('ui_hook'):
+	if Input.is_action_pressed('hook'):
 		print("Polled Chargin'")
-	if Input.is_action_just_released('ui_hook'):
+	if Input.is_action_just_released('hook'):
 		print("Polled Hook!")
 	return null
 
 func handle_input_event(event):
-	if event.is_action_pressed("ui_jump") && !event.is_echo() && event.is_pressed():
+	if event.is_action_pressed("jump") && !event.is_echo() && event.is_pressed():
 		return jump_out()
-	if event.is_action("ui_hook") && !event.is_echo() && event.is_pressed():
+	if event.is_action("hook") && !event.is_echo() && event.is_pressed():
 		sharedVars.launchSpeed = baseSpeed
 		sharedVars.launchRange = baseRange
 		sharedVars._charginHook = true
-	elif event.is_action_released("ui_hook") && !event.is_echo():
+	elif event.is_action_released("hook") && !event.is_echo():
 		sharedVars._charginHook = false
 		shoot_hook()
 		return "airOut"

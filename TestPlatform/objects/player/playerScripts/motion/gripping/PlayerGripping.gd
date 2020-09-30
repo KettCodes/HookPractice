@@ -1,4 +1,6 @@
-extends "res://player/states/PlayerState.gd"
+extends PlayerState
+
+class_name PlayerGripping
 
 func enter():
 	pass

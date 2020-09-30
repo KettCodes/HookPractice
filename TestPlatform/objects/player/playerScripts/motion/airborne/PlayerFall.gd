@@ -1,4 +1,6 @@
-extends "res://player/states/motion/airborne/Airborne.gd"
+extends PlayerAirborne
+
+class_name PlayerFall
 
 func physics_process(delta):
 	.physics_process(delta)

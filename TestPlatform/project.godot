@@ -39,10 +39,65 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://objects/hook/hookScripts/HookStateMachine.gd"
 }, {
-"base": "Node",
-"class": "StateMachine",
+"base": "PlayerGravity",
+"class": "PlayerAirborne",
 "language": "GDScript",
-"path": "res://objects/player/playerScripts/StateMachine.gd"
+"path": "res://objects/player/playerScripts/motion/airborne/PlayerAirborne.gd"
+}, {
+"base": "PlayerGripping",
+"class": "PlayerClimb",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/motion/gripping/PlayerClimb.gd"
+}, {
+"base": "PlayerGripping",
+"class": "PlayerCrawl",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/motion/gripping/PlayerCrawl.gd"
+}, {
+"base": "PlayerAirborne",
+"class": "PlayerFall",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/motion/airborne/PlayerFall.gd"
+}, {
+"base": "PlayerState",
+"class": "PlayerGravity",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/motion/PlayerGravity.gd"
+}, {
+"base": "PlayerState",
+"class": "PlayerGripping",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/motion/gripping/PlayerGripping.gd"
+}, {
+"base": "PlayerGravity",
+"class": "PlayerGrounded",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/motion/grounded/PlayerGrounded.gd"
+}, {
+"base": "PlayerGrounded",
+"class": "PlayerIdle",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/motion/grounded/PlayerIdle.gd"
+}, {
+"base": "PlayerAirborne",
+"class": "PlayerJump",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/motion/airborne/PlayerJump.gd"
+}, {
+"base": "Node",
+"class": "PlayerState",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/PlayerState.gd"
+}, {
+"base": "Node",
+"class": "PlayerStateMachine",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/PlayerStateMachine.gd"
+}, {
+"base": "PlayerGrounded",
+"class": "PlayerWalk",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/motion/grounded/PlayerWalk.gd"
 } ]
 _global_script_class_icons={
 "HookState": "",
@@ -51,7 +106,18 @@ _global_script_class_icons={
 "HookStateIdle": "",
 "HookStateLatched": "",
 "HookStateMachine": "",
-"StateMachine": ""
+"PlayerAirborne": "",
+"PlayerClimb": "",
+"PlayerCrawl": "",
+"PlayerFall": "",
+"PlayerGravity": "",
+"PlayerGripping": "",
+"PlayerGrounded": "",
+"PlayerIdle": "",
+"PlayerJump": "",
+"PlayerState": "",
+"PlayerStateMachine": "",
+"PlayerWalk": ""
 }
 
 [application]
@@ -67,14 +133,39 @@ ui_mouseClickLeft={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
-ui_hook={
+hook={
 "deadzone": 0.5,
 "events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
-ui_jump={
+jump={
 "deadzone": 0.5,
 "events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
+ ]
+}
+move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
+ ]
+}
+move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
+ ]
+}
+grip={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 

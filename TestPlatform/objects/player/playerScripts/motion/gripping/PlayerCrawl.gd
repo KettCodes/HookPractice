@@ -1,4 +1,6 @@
-extends "res://player/states/motion/gripping/Gripping.gd"
+extends PlayerGripping
+
+class_name PlayerCrawl
 
 var SPEED = 200
 

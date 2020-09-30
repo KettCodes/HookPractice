@@ -1,7 +1,7 @@
 # https://gdscript.com/godot-state-machine
 extends Node
 
-class_name StateMachine
+class_name PlayerStateMachine
 
 var state : Object
 var history = []

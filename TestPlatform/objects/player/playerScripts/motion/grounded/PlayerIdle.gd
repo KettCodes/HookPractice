@@ -1,4 +1,6 @@
-extends "res://player/states/motion/grounded/Grounded.gd"
+extends PlayerGrounded
+
+class_name PlayerIdle
 
 func physics_process(delta):
 	.physics_process(delta)

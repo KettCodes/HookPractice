@@ -1,6 +1,8 @@
-extends "res://player/states/motion/airborne/Airborne.gd"
+extends PlayerAirborne
 
-func enter():
+class_name PlayerJump
+
+func enter():	
 	shared.velocity.y = -400
 
 func physics_process(delta):

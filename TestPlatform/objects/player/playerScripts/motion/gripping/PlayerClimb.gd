@@ -1,4 +1,6 @@
-extends "res://player/states/motion/gripping/Gripping.gd"
+extends PlayerGripping
+
+class_name PlayerClimb
 
 var SPEED = 100
 var wall = 0

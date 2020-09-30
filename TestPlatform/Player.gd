@@ -52,5 +52,5 @@ func ground_movement(delta):
 		motion.x = motion.x/1.25
 		
 	
-func get_pulled(pull):
+func get_yanked(pull):
 	motion += pull

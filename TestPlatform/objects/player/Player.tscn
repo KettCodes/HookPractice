@@ -70,3 +70,9 @@ cast_to = Vector2( -17, 0 )
 
 [node name="RayRight" type="RayCast2D" parent="."]
 cast_to = Vector2( 17, 0 )
+
+[node name="RayTop" type="RayCast2D" parent="."]
+cast_to = Vector2( 0, -17 )
+
+[node name="RayBottom" type="RayCast2D" parent="."]
+cast_to = Vector2( 0, 17 )

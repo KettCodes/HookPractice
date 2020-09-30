@@ -2,10 +2,11 @@ extends PlayerState
 
 class_name PlayerGripping
 
+var SPEED = 250
+
 func enter():
 	pass
-	shared.ray_left.enabled = true
-	shared.ray_right.enabled = true
+
 
 func exit():
 	pass
@@ -16,4 +17,4 @@ func input(event):
 	
 	if not Input.is_action_pressed("grip"):
 		exit()
-		change_state("Idle")
+		change_state("Fall")

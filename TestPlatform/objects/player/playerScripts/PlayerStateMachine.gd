@@ -27,7 +27,6 @@ func back():
 
 func _enter_state():
 	# Give the new state a reference back to the state machine running it i.e. this one
-	state.fsm = self
 	state.enter()
 
 

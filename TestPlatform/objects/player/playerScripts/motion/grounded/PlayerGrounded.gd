@@ -4,10 +4,8 @@ class_name PlayerGrounded
 
 func physics_process(delta):
 	.physics_process(delta)
-	
-	if not shared.player.is_on_floor():
-#		change_state("Fall")
-		print_debug("Falling")
+	if not shared.ray_bottom.is_colliding():
+		change_state("Fall")
 
 func input(event):
 	.input(event)

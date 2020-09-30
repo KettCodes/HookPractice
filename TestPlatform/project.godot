@@ -12,32 +12,37 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "HookState",
 "language": "GDScript",
-"path": "res://scripts/hookScripts/HookState.gd"
+"path": "res://objects/hook/hookScripts/HookState.gd"
 }, {
 "base": "HookState",
 "class": "HookStateAirIn",
 "language": "GDScript",
-"path": "res://scripts/hookScripts/HookStateAirIn.gd"
+"path": "res://objects/hook/hookScripts/HookStateAirIn.gd"
 }, {
 "base": "HookState",
 "class": "HookStateAirOut",
 "language": "GDScript",
-"path": "res://scripts/hookScripts/HookStateAirOut.gd"
+"path": "res://objects/hook/hookScripts/HookStateAirOut.gd"
 }, {
 "base": "HookState",
 "class": "HookStateIdle",
 "language": "GDScript",
-"path": "res://scripts/hookScripts/HookStateIdle.gd"
+"path": "res://objects/hook/hookScripts/HookStateIdle.gd"
 }, {
 "base": "HookState",
 "class": "HookStateLatched",
 "language": "GDScript",
-"path": "res://scripts/hookScripts/HookStateLatched.gd"
+"path": "res://objects/hook/hookScripts/HookStateLatched.gd"
 }, {
 "base": "Node2D",
 "class": "HookStateMachine",
 "language": "GDScript",
-"path": "res://scripts/hookScripts/HookStateMachine.gd"
+"path": "res://objects/hook/hookScripts/HookStateMachine.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://objects/player/playerScripts/StateMachine.gd"
 } ]
 _global_script_class_icons={
 "HookState": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "HookStateAirOut": "",
 "HookStateIdle": "",
 "HookStateLatched": "",
-"HookStateMachine": ""
+"HookStateMachine": "",
+"StateMachine": ""
 }
 
 [application]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scripts/hookScripts/HookStateLatched.gd" type="Script" id=1]
-[ext_resource path="res://scripts/hookScripts/HookStateAirOut.gd" type="Script" id=2]
-[ext_resource path="res://scripts/hookScripts/HookStateAirIn.gd" type="Script" id=3]
-[ext_resource path="res://scripts/hookScripts/HookVars.gd" type="Script" id=4]
-[ext_resource path="res://scripts/hookScripts/HookStateMachine.gd" type="Script" id=5]
-[ext_resource path="res://scripts/hookScripts/HookStateIdle.gd" type="Script" id=6]
+[ext_resource path="res://objects/hook/hookScripts/HookStateLatched.gd" type="Script" id=1]
+[ext_resource path="res://objects/hook/hookScripts/HookStateAirOut.gd" type="Script" id=2]
+[ext_resource path="res://objects/hook/hookScripts/HookStateAirIn.gd" type="Script" id=3]
+[ext_resource path="res://objects/hook/hookScripts/HookStateVars.gd" type="Script" id=4]
+[ext_resource path="res://objects/hook/hookScripts/HookStateMachine.gd" type="Script" id=5]
+[ext_resource path="res://objects/hook/hookScripts/HookStateIdle.gd" type="Script" id=6]
 [ext_resource path="res://ImagesToImport/simpleGrapplingHookOpen.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]

@@ -13,8 +13,8 @@ export(float) var maxSpeed = 1000
 export(float) var pullFactor = 3 #constant speed up when pulling player
 export(float) var pullExpFactor = 1.3 #exponent on distance when pulling
 export(float) var slowingFactor = 1 #slows x movement of extending hook approaching max range
-export(float) var chargeRangeFactor = 3 #slows charge rate of launch range 
-export(float) var chargeSpeedFactor = 4 #slows charge rate of launch speed
+export(float) var chargeRangeFactor = 3 #slows charge rate of launchrange 
+export(float) var chargeSpeedFactor = 4 #slows charge rate of launchspeed
 
 var hook : KinematicBody2D = null
 var player : Object = null
@@ -67,8 +67,6 @@ func shoot_hook():
 	var direction = Vector2(Input.get_joy_axis(0, JOY_ANALOG_RX),
 							 Input.get_joy_axis(0, JOY_ANALOG_RY)).angle()
 	sharedVars.currentMovement = sharedVars.launchSpeed*Vector2(cos(direction),sin(direction))
-	#print("launchSpeed: " + String(get_parent().launchSpeed))
-	#print("launchAngle: " + String(get_parent().launchRange) + ", " + String(sin(direction)))
 
 func charge_hook(delta):
 	if sharedVars.launchSpeed < maxSpeed:
@@ -76,7 +74,7 @@ func charge_hook(delta):
 	if sharedVars.launchRange < maxRange:
 		sharedVars.launchRange += (maxRange - baseRange) * delta/chargeRangeFactor
 
-func update_rope():
+func update_arm():
 	return
 
 func check_wrapping():

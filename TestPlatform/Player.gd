@@ -18,11 +18,6 @@ export var jumpPower = 500
 func _ready():
 	pass
 
-# Input Callback should move player input to this
-func _input(event: InputEvent):
-	pass
-
-
 #Physics call with time delta
 func _physics_process(delta):
 	
